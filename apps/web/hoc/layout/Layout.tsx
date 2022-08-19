@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { Nav } from '../../components/Nav/Nav';
+import { Footer } from '../../components/footer/Footer';
+import { Nav } from '../../components/nav/Nav';
 import styles from './layout.module.scss';
 
 interface ILayout {
@@ -13,7 +14,9 @@ export const Layout: FC<ILayout> = ({ children }) => {
         <Nav />
       </nav>
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>footer</footer>
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
     </div>
   );
 };

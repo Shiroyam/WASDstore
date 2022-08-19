@@ -1,0 +1,6 @@
+@use "../../styles/varible" as var; 
+
+.footer{
+    height: 400px;
+    background-color: var.$color-secondary;
+}
