@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Layout } from '../hoc/layout/Layout';
 import '../styles/app.scss';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -9,7 +10,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>WASDstore</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </>
   );
