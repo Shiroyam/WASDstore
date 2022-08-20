@@ -9,6 +9,9 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
     "@nrwl/next": "14.5.7",
     "@react-three/drei": "^9.22.7",
     "@react-three/fiber": "^8.3.1",
