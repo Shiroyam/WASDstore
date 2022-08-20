@@ -1,5 +1,11 @@
+import { Preview } from '../components/preview/Preview';
+
 export function Index() {
-  return <div>daaadadadadadddddddddddddddddddddddd</div>;
+  return (
+    <>
+      <Preview />
+    </>
+  );
 }
 
 export default Index;
