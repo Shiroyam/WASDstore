@@ -3,15 +3,13 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
 import { DBHelper } from './app/helpers/db.helper';
+import { router } from './app/routers/routers';
 
 const app = express();
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
-
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
-});
+app.use('/api', router);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
@@ -19,4 +17,4 @@ const server = app.listen(port, () => {
 });
 server.on('error', console.error);
 
-DBHelper.init()
+DBHelper.init();
