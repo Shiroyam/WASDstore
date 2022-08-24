@@ -8,6 +8,7 @@ export default class KeyboardController {
         title: req.body.title,
         text: req.body.text,
         img: req.body.img,
+        price: req.body.price,
       };
 
       const keyboard = new KeyboardModel(data);
