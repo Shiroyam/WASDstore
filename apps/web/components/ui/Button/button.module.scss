@@ -1,0 +1,20 @@
+@use "../../../styles/varible" as var;
+
+.button{
+    padding: 10px;
+    cursor: pointer;
+    background-color: var.$color-primary;
+    color: var.$color-text;
+    outline: none;
+    border: none;
+    border-radius: var.$size-radius;
+    transition: all 0.3s;
+    font-size: 15px;
+    height: 45px;
+    &:hover{
+        background-color: var.$color-hover;
+    }
+    &:active{
+        opacity: 0.6;
+    }
+}
