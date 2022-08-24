@@ -1,4 +1,5 @@
 import * as express from 'express';
+import AudioController from '../controllers/audio.controller';
 import KeyboardController from '../controllers/keyboard.controller';
 import MouseController from '../controllers/mouse.cotroller';
 
@@ -15,3 +16,9 @@ router.post('/mouse', Mouse.create);
 router.get('/mouse', Mouse.findAll);
 router.get('/mouse/:id', Mouse.find)
 router.delete('/mouse/:id', Mouse.remove);
+
+const Audio = new AudioController()
+router.post('/audio', Audio.create);
+router.get('/audio', Audio.findAll);
+router.get('/audio/:id', Audio.find)
+router.delete('/audio/:id', Audio.remove);
