@@ -8,7 +8,7 @@ import { IAudio } from '../components/itemsSlider/types';
 import axios from 'axios';
 import styles from './index.module.scss';
 
-export function Index({ keyboardData, audioData }) {
+export function Index({ keyboardData, audioData, accessorieData }) {
   return (
     <>
       <Preview />
@@ -27,6 +27,10 @@ export function Index({ keyboardData, audioData }) {
         <h3 className={styles.title}>Аудио</h3>
         <ItemsSlider data={audioData} />
       </section>
+      <section className={styles.slider}>
+        <h3 className={styles.title}>Мыши</h3>
+        <ItemsSlider data={accessorieData} />
+      </section>
     </>
   );
 }
@@ -38,6 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const responseAudio = await axios.get<IAudio[]>(
     'http://localhost:3333/api/audio'
   );
+  const responseAccessorie = await axios.get('http://localhost:3333/api/mouse')
 
   if (!responseKeyboard) {
     return {
@@ -55,6 +60,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       keyboardData: responseKeyboard.data,
       audioData: responseAudio.data,
+      accessorieData: responseAccessorie.data,
     },
   };
 };
