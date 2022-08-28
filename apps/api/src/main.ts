@@ -5,6 +5,8 @@ import * as cors from 'cors';
 import { DBHelper } from './app/helpers/db.helper';
 import { router } from './app/routers/routers';
 
+import 'dotenv/config' 
+
 const app = express();
 
 app.use(cors());
