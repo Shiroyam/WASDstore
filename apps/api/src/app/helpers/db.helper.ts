@@ -1,7 +1,6 @@
 import * as mongoose from 'mongoose';
 
-const DB_URL =
-  "mongodb+srv://user:user@cluster0.lwikw.mongodb.net/wasdstore?retryWrites=true&w=majority";
+const DB_URL = "";
 
 export class DBHelper {
     static init(): void {
