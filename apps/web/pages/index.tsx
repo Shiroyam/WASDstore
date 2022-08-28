@@ -37,12 +37,14 @@ export function Index({ keyboardData, audioData, accessorieData }) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const responseKeyboard = await axios.get<ICard[]>(
-    'http://localhost:3333/api/keyboard'
+    `${process.env.REACT_APP_LOCALHOST}/keyboard`
   );
   const responseAudio = await axios.get<IAudio[]>(
-    'http://localhost:3333/api/audio'
+    `${process.env.REACT_APP_LOCALHOST}/audio`
   );
-  const responseAccessorie = await axios.get('http://localhost:3333/api/mouse')
+  const responseAccessorie = await axios.get(
+    `${process.env.REACT_APP_LOCALHOST}/mouse`
+  );
 
   if (!responseKeyboard) {
     return {
