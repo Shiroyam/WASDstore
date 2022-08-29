@@ -1,7 +1,7 @@
 @use '../../styles/varible' as var;
 
 .popular {
-  width: 100%;
+  width: 100%; 
   padding: 20px;
   border-radius: 25px;
   background-color: var.$color-bg;
@@ -25,20 +25,29 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 1700px) {
   .popular {
     .card {
-      display: grid;
       grid-template-columns: auto auto auto;
     }
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1290px) {
   .popular {
     .card {
-      display: grid;
       grid-template-columns: auto auto;
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .popular {
+    .card {
+      grid-template-columns: auto;
+    }
+  }
+}
+

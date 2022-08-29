@@ -8,9 +8,9 @@ import { IAudio } from '../components/itemsSlider/types';
 import axios from 'axios';
 import styles from './index.module.scss';
 
-export function Index({ keyboardData, audioData, accessorieData }) {
+export function Index({ keyboardData, audioData, mouseData }) {
   return (
-    <>
+    <div className={styles.homePage}>
       <Preview />
       <Popular>
         {keyboardData.map((item: ICard) => (
@@ -29,9 +29,9 @@ export function Index({ keyboardData, audioData, accessorieData }) {
       </section>
       <section className={styles.slider}>
         <h3 className={styles.title}>Мыши</h3>
-        <ItemsSlider data={accessorieData} />
+        <ItemsSlider data={mouseData} />
       </section>
-    </>
+    </div>
   );
 }
 
@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const responseAudio = await axios.get<IAudio[]>(
     `${process.env.REACT_APP_LOCALHOST}/audio`
   );
-  const responseAccessorie = await axios.get(
+  const responseMouse = await axios.get(
     `${process.env.REACT_APP_LOCALHOST}/mouse`
   );
 
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       keyboardData: responseKeyboard.data,
       audioData: responseAudio.data,
-      accessorieData: responseAccessorie.data,
+      mouseData: responseMouse.data,
     },
   };
 };

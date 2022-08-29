@@ -10,8 +10,14 @@
   max-width: 1920px;  
   padding: 25px;
   gap: 15px;
+  .menuItem{
+    display: none;
+  }
   .logo{
     grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .items {
     grid-area: items;
@@ -46,5 +52,18 @@
         margin-right: 0;
       }
     }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .nav{
+     grid-template-areas: "items logo icons";
+     .items{
+      display: none;
+     }
+     .menuItem{
+      display: block;
+     }
   }
 }

@@ -18,15 +18,15 @@ export const ItemsSlider: FC<ISliderProps> = ({ data }) => {
         spaceBetween={50}
         slidesPerView={1}
         breakpoints={{
-          425: {
+          900: {
             slidesPerView: 2,
           },
-          768: {
+          1290: {
             slidesPerView: 3,
           },
-          1024: {
+          1700: {
             slidesPerView: 4,
-          },
+          }
         }}
       >
         {data.map((item) => (

@@ -1,6 +1,6 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 
 const LazyModel = lazy(() => import('../keyboard3d/Scene'));
 export function Preview() {
@@ -8,7 +8,7 @@ export function Preview() {
     <div>
       <Suspense fallback="loading">
         <Canvas
-          style={{ height: '100vh' }}
+          style={{ width: '100%', height: '100vh' }}
           className="canvas"
           camera={{ position: [5, 10, 10], zoom: 1 }}
         >
