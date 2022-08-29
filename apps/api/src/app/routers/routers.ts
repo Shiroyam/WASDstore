@@ -1,6 +1,7 @@
 import * as express from 'express';
 import AccessorieController from '../controllers/accessorie.controller';
 import AudioController from '../controllers/audio.controller';
+import { BrandController } from '../controllers/brands.controller';
 import KeyboardController from '../controllers/keyboard.controller';
 import MouseController from '../controllers/mouse.cotroller';
 
@@ -29,3 +30,7 @@ router.post('/accessorie', Accessorie.create);
 router.get('/accessorie', Accessorie.findAll);
 router.get('/accessorie/:id', Accessorie.find)
 router.delete('/accessorie/:id', Accessorie.remove);
+
+const Brand = new BrandController();
+router.post('/brand', Brand.createItems)
+router.get('/brand/:name', Brand.findNameOrType)
