@@ -6,7 +6,7 @@ import { Cards } from '../components/cards/Cards';
 import { ItemsSlider } from '../components/itemsSlider/ItemSlider';
 import { IAudio } from '../components/itemsSlider/types';
 import axios from 'axios';
-import styles from './index.module.scss';
+import styles from './homePage.module.scss';
 
 export function Index({ keyboardData, audioData, mouseData }) {
   return (
