@@ -1,0 +1,33 @@
+.keyboardPage {
+  margin-top: 125px;
+  display: flex;
+  justify-content: center;
+  .card {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .keyboardPage {
+    .card {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  .keyboardPage {
+    .card {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .keyboardPage {
+    .card {
+      grid-template-columns: auto;
+    }
+  }
+}

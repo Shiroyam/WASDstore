@@ -1,0 +1,22 @@
+@use '../../styles/varible' as var;
+
+.filter {
+  width: 250px;
+  .brandWrapper {
+    .header {
+      border-bottom: 1px solid var.$color-bg;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .brands {
+      cursor: pointer;
+      margin-bottom: 15px;
+      font-weight: 300;
+      margin-left: 5px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
