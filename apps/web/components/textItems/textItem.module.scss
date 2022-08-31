@@ -1,0 +1,19 @@
+@use "../../styles/varible" as var;
+
+.textItem {
+  .title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .text {
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 25px;
+    color: var.$color-primary;
+  }
+}

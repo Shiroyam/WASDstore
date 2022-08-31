@@ -1,3 +1,5 @@
+@use "../../styles/varible" as var;
+
 .keyboardPage {
   display: flex;
   flex-direction: column;
@@ -19,6 +21,16 @@
     grid-area: card;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.keyboardItem {
+  display: flex;
+  justify-content: center;
+  margin-top: 125px;
+  .wrapperSlider {
+    width: 600px;
+    height: 350px;
+    margin-right: 25px;
   }
 }
 

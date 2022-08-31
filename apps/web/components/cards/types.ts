@@ -4,4 +4,6 @@ export interface ICard{
     titleImg: string;
     price: string;
     brand: string;
+    text?: string;
+    img?: string[];
 }
