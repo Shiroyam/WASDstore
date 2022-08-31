@@ -2,29 +2,43 @@ import { GetServerSideProps, NextPage } from 'next';
 import { ICard } from '../../components/cards/types';
 import { Cards } from '../../components/cards/Cards';
 import { IFilter } from '../../components/filter/types';
+import { Filter } from '../../components/filter/Filter';
 import styles from './keyboard.module.scss';
 import axios from 'axios';
-import { Filter } from '../../components/filter/Filter';
-
+import { useTypesSelector } from '../../hooks/useTypeSelector';
 interface IKeyboardPage {
   keyboardData: ICard[];
   brandData: IFilter[];
 }
 
 const KeyboardPage: NextPage<IKeyboardPage> = ({ keyboardData, brandData }) => {
+  const { brandFlag, brandName } = useTypesSelector((state) => state.filter);
+
   return (
     <div className={styles.keyboardPage}>
-      <Filter data={brandData} />
-      <div className={styles.card}>
-        {keyboardData.map((item: ICard) => (
-          <Cards
-            key={item._id}
-            title={item.title}
-            titleImg={item.titleImg}
-            _id={item._id}
-            price={item.price}
-          />
-        ))}
+      <div className={styles.wrapper}>
+        <div className={styles.filterWrapper}>
+          <Filter data={brandData} />
+        </div>
+        <div className={styles.card}>
+          {keyboardData
+            .filter((item: ICard) => {
+              if (brandFlag) {
+                return item.brand === brandName;
+              }
+              return true;
+            })
+            .map((item: ICard) => (
+              <Cards
+                key={item._id}
+                title={item.title}
+                titleImg={item.titleImg}
+                _id={item._id}
+                price={item.price}
+                brand={item.brand}
+              />
+            ))}
+        </div>
       </div>
     </div>
   );

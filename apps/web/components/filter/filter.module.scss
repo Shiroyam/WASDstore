@@ -10,13 +10,20 @@
       margin-bottom: 15px;
     }
     .brands {
+      text-align: center;
       cursor: pointer;
+      padding: 5px;
       margin-bottom: 15px;
       font-weight: 300;
-      margin-left: 5px;
+      background-color: var.$color-bg;
+      border-radius: var.$size-radius;
       &:hover {
         opacity: 0.5;
       }
+    }
+    .active{
+      background-color: var.$color-primary;
+      color: var.$color-text;
     }
   }
 }
