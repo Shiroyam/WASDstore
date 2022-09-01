@@ -1,4 +1,4 @@
-@use "../../styles/varible" as var;
+@use '../../styles/varible' as var;
 
 .keyboardPage {
   display: flex;
@@ -56,6 +56,45 @@
       .card {
         grid-template-columns: auto;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .keyboardItem {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .keyboardItem {
+    .wrapperSlider{
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .keyboardItem {
+    .wrapperSlider{
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .keyboardItem {
+    .wrapperSlider{
+      width: 420px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .keyboardItem {
+    .wrapperSlider{
+      width: 300px;
     }
   }
 }

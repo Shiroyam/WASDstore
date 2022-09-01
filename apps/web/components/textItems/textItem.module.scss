@@ -17,3 +17,32 @@
     color: var.$color-primary;
   }
 }
+
+@media  screen and (max-width: 925px) {
+  .textItem{
+    margin-top: 100px;
+    margin-bottom: 25px;
+    text-align: center;
+    .text{
+      max-width: 600px;
+    }
+  }
+}
+
+@media  screen and (max-width: 600px) {
+  .textItem{
+    margin-top: 0;
+    .text{
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .textItem{
+    margin-top: 0;
+    .text{
+      width: 300px;
+    }
+  }
+}

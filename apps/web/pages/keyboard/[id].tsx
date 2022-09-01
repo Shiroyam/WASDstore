@@ -3,7 +3,6 @@ import { ICard } from '../../components/cards/types';
 import { PhotoSlider } from '../../components/photoSlider/PhotoSlider';
 import styles from './keyboard.module.scss';
 import axios from 'axios';
-import { Button } from '../../components/ui/Button/Button';
 import { TextItem } from '../../components/textItems/TextItem';
 
 interface KeyboardProps {
