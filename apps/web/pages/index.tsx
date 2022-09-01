@@ -20,6 +20,7 @@ export function Index({ keyboardData, audioData, mouseData }) {
             titleImg={item.titleImg}
             _id={item._id}
             price={item.price}
+            brand={item.brand}
           />
         ))}
       </Popular>
