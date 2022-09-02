@@ -9,6 +9,8 @@ export class BrandController {
         name: req.body.name,
         keyboard: req.body.keyboardId,
         mouse: req.body.mouseId,
+        audio: req.body.audioId,
+        accessorie: req.body.accessorieId,
       };
 
       const brand = new BrandModel(data);
