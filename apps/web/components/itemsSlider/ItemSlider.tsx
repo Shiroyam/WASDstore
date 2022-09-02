@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { ISliderProps } from './types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import styles from './itemSlider.module.scss';
@@ -7,6 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import 'keen-slider/keen-slider.min.css';
 import Link from 'next/link';
+import { ICard } from '../cards/types';
+
+interface ISliderProps {
+  data: ICard[];
+}
 
 export const ItemsSlider: FC<ISliderProps> = ({ data }) => {
   return (
@@ -32,7 +36,7 @@ export const ItemsSlider: FC<ISliderProps> = ({ data }) => {
         {data.map((item) => (
           <>
             <SwiperSlide key={item._id}>
-              <Link href={`/audio/${item._id}`}>
+              <Link href={`/${item.type}/${item._id}`}>
                 <div className={styles.item}>
                   <img className={styles.img} src={item.titleImg} alt="audio" />
                   <div className={styles.title}>{item.title}</div>

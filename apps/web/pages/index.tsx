@@ -4,7 +4,6 @@ import { Popular } from '../components/popular/Popular';
 import { Preview } from '../components/preview/Preview';
 import { Cards } from '../components/cards/Cards';
 import { ItemsSlider } from '../components/itemsSlider/ItemSlider';
-import { IAudio } from '../components/itemsSlider/types';
 import axios from 'axios';
 import styles from './homePage.module.scss';
 
@@ -21,6 +20,7 @@ export function Index({ keyboardData, audioData, mouseData }) {
             _id={item._id}
             price={item.price}
             brand={item.brand}
+            type={item.type}
           />
         ))}
       </Popular>
@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const responseKeyboard = await axios.get<ICard[]>(
     `${process.env.REACT_APP_LOCALHOST}/keyboard`
   );
-  const responseAudio = await axios.get<IAudio[]>(
+  const responseAudio = await axios.get<ICard[]>(
     `${process.env.REACT_APP_LOCALHOST}/audio`
   );
   const responseMouse = await axios.get(

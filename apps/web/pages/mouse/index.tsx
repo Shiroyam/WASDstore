@@ -1,27 +1,28 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { ICard } from '../../components/cards/types';
-import { Cards } from '../../components/cards/Cards';
 import { IFilter } from '../../components/filter/types';
-import { Filter } from '../../components/filter/Filter';
-import styles from './keyboard.module.scss';
-import axios from 'axios';
 import { useTypesSelector } from '../../hooks/useTypeSelector';
-interface IKeyboardPage {
-  keyboardData: ICard[];
+import { Filter } from '../../components/filter/Filter';
+import { Cards } from '../../components/cards/Cards';
+import styles from './mouse.module.scss';
+import axios from 'axios';
+
+interface MouseProps {
+  mousedData: ICard[];
   brandData: IFilter[];
 }
 
-const KeyboardPage: NextPage<IKeyboardPage> = ({ keyboardData, brandData }) => {
+const Mouse: NextPage<MouseProps> = ({ mousedData, brandData }) => {
   const { brandFlag, brandName } = useTypesSelector((state) => state.filter);
 
   return (
-    <div className={styles.keyboardPage}>
+    <div className={styles.mousePage}>
       <div className={styles.wrapper}>
         <div className={styles.filterWrapper}>
           <Filter data={brandData} />
         </div>
         <div className={styles.card}>
-          {keyboardData
+          {mousedData
             .filter((item: ICard) => {
               if (brandFlag) {
                 return item.brand === brandName;
@@ -46,14 +47,20 @@ const KeyboardPage: NextPage<IKeyboardPage> = ({ keyboardData, brandData }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const responseKeyboard = await axios.get<ICard[]>(
-    `${process.env.REACT_APP_LOCALHOST}/keyboard`
+  const responseMouse = await axios.get<ICard[]>(
+    `${process.env.REACT_APP_LOCALHOST}/mouse`
   );
   const responseBrand = await axios.get<IFilter[]>(
-    `${process.env.REACT_APP_LOCALHOST}/brand/Keyboard`
+    `${process.env.REACT_APP_LOCALHOST}/brand/Mouse`
   );
 
-  if (!responseKeyboard) {
+  if (!responseMouse) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (!responseBrand) {
     return {
       notFound: true,
     };
@@ -61,10 +68,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      keyboardData: responseKeyboard.data,
+      mousedData: responseMouse.data,
       brandData: responseBrand.data,
     },
   };
 };
 
-export default KeyboardPage;
+export default Mouse;

@@ -13,7 +13,8 @@
   cursor: pointer;
 
   .img {
-    width: 380px;
+    width: auto;
+    max-width: 380px;
     height: 250px;
   }
   .title {

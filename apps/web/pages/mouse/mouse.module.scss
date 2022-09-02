@@ -1,0 +1,101 @@
+@use '../../styles/varible' as var;
+
+.mousePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 125px;
+  .wrapper {
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'filter card';
+  }
+  display: flex;
+  .filterWrapper {
+    grid-area: filter;
+    justify-self: flex-end;
+  }
+
+  .card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.mouseItem {
+  display: flex;
+  justify-content: center;
+  margin-top: 125px;
+  .wrapperSlider {
+    width: 600px;
+    height: 350px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .mousePage {
+    .card {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .mousePage {
+    .card {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  .mousePage {
+    .wrapper {
+      .card {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .mouseItem {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mouseItem {
+    .wrapperSlider {
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .mouseItem {
+    .wrapperSlider {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .mouseItem {
+    .wrapperSlider {
+      width: 420px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .mouseItem {
+    .wrapperSlider {
+      width: 300px;
+    }
+  }
+}

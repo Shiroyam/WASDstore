@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
+import styles from "./PhotoSlider.module.scss"
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -24,7 +25,10 @@ export const PhotoSlider: FC<PhotoSliderProps> = ({ img }) => {
         {img.map((item) => (
           <>
             <SwiperSlide>
-              <img style={{ width: '100%', height: 'auto' }} src={item} />
+              <img
+                style={{ width: '100%', height: 'auto' }}
+                src={item}
+              />
             </SwiperSlide>
           </>
         ))}
@@ -41,7 +45,10 @@ export const PhotoSlider: FC<PhotoSliderProps> = ({ img }) => {
         {img.map((item) => (
           <>
             <SwiperSlide>
-              <img style={{ width: '100%', height: 'auto' }} src={item} />
+              <img
+                style={{ width: '100%', height: 'auto' }}
+                src={item}
+              />
             </SwiperSlide>
           </>
         ))}

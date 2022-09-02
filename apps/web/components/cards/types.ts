@@ -6,4 +6,5 @@ export interface ICard{
     brand: string;
     text?: string;
     img?: string[];
+    type?: string;
 }
