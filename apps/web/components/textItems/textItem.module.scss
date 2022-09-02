@@ -1,0 +1,48 @@
+@use "../../styles/varible" as var;
+
+.textItem {
+  .title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .text {
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 25px;
+    color: var.$color-primary;
+  }
+}
+
+@media  screen and (max-width: 925px) {
+  .textItem{
+    margin-top: 100px;
+    margin-bottom: 25px;
+    text-align: center;
+    .text{
+      max-width: 600px;
+    }
+  }
+}
+
+@media  screen and (max-width: 600px) {
+  .textItem{
+    margin-top: 0;
+    .text{
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .textItem{
+    margin-top: 0;
+    .text{
+      width: 300px;
+    }
+  }
+}

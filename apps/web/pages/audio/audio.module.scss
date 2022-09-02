@@ -1,0 +1,100 @@
+@use '../../styles/varible' as var;
+
+.audioPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 125px;
+  .wrapper {
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'filter card';
+  }
+  display: flex;
+  .filterWrapper {
+    grid-area: filter;
+    justify-self: flex-end;
+  }
+
+  .card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.audioItem {
+  display: flex;
+  justify-content: center;
+  margin-top: 125px;
+  .wrapperSlider {
+    width: 600px;
+    height: 350px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .audioPage {
+    .card {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .audioPage {
+    .card {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  .audioPage {
+    .wrapper {
+      .card {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .audioItem {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .audioItem {
+    .wrapperSlider {
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .audioItem {
+    .wrapperSlider {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .audioItem {
+    .wrapperSlider {
+      width: 420px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .audioItem {
+    .wrapperSlider {
+      width: 300px;
+    }
+  }
+}

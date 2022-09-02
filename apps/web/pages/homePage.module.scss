@@ -1,0 +1,19 @@
+@use '../styles/varible' as var;
+
+.homePage {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      margin: 20px 0;
+      height: 50px;
+      padding: 10px 25px;
+      font-size: 25px;
+      border-radius: var.$size-radius;
+      color: var.$color-text;
+      text-align: center;
+      background-color: var.$color-primary;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../../styles/varible" as var;
+
+.layout { 
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'nav'
+    'main'
+    'footer';
+  .nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 15px);
+    width: 100%;
+    height: 100px;
+    background-color: var.$color-secondary;
+    z-index: 999;
+  }
+  .main {
+    grid-area: main;
+    width: 100%;
+    max-width: 100vw;
+    margin-bottom: 300px;
+    position: relative;
+  }
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    max-width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
+}
